@@ -18,7 +18,7 @@ Once the endpoint is called, a new account will be opened connected to the user 
 3. screen (to open multiple session in background)
 4. apache  maven
 
-####Building and  Running the Application ####
+#### Building and  Running the Application ####
 
 **Windows users who dont have screen can perhaps manually build and run**
  - mvn clean install -f microserviceDns/pom.xml
