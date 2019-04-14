@@ -4,7 +4,23 @@ This Microservice exposes two APIs
 1. The API will expose an endpoint which accepts the user information (customerID, initialCredit).
 Once the endpoint is called, a new account will be opened connected to the user whose ID is customerID. Also, if initialCredit is not 0, a transaction will be sent to the new account.
 
-2. Another Endpoint will output the user information showing Name, Surname, balance, and transactions of the accounts. 
+2. Another Endpoint will output the user information showing Name, Surname, balance, and transactions of the accounts.
+
+### API Specification ###
+
+1. Adding Customer
+ - uri : http://localhost:8000/api/v1/customers 
+ - method : POST
+ - body : {"firstName":"Prateek","lastName":"Srivastava"}
+
+2. Adding Accounts
+ - uri: http://localhost:8000/api/v1/accounts
+ - method : POST
+ - body : {"accountType":"Current","currentAccountBalance":"20","customer":"1"}
+
+3. Listing Customer and Accounts
+ - uri : http://localhost:8000/api/v1/transaction/account/{id}
+ - method : GET
 
 ### Architecture Diagram ###
 
@@ -35,21 +51,6 @@ Once the endpoint is called, a new account will be opened connected to the user 
     - account Service in port 8000
     - transaction service in port 8081
     - transaction service in port 8082
-### API Specification ###
-
-1. Adding Customer
- - uri : http://localhost:8000/api/v1/customers 
- - method : POST
- - body : {"firstName":"Prateek","lastName":"Srivastava"}
-
-2. Adding Accounts
- - uri: http://localhost:8000/api/v1/accounts
- - method : POST
- - body : {"accountType":"Current","currentAccountBalance":"20","customer":"1"}
-
-3. Listing Customer and Accounts
- - uri : http://localhost:8000/api/v1/transaction/account/{id}
- - method : GET
 
 ### Testing ###
 Please run testing_services.sh which contain few curl commands to test the service. The service can be also testted using any rest client like postman
