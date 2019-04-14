@@ -52,4 +52,4 @@ Once the endpoint is called, a new account will be opened connected to the user 
  - method : GET
 
 ### Testing ###
-Please run testing_services.sh which contain few curl commands to test the service. The service can be also testted usin any rest client like postman
+Please run testing_services.sh which contain few curl commands to test the service. The service can be also testted using any rest client like postman
