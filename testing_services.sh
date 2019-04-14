@@ -6,24 +6,31 @@
 ###########
 
 echo ******************Adding Customer****************************
-echo 
+echo
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"firstName":"Prateek","lastName":"Srivastava"}' \
   http://localhost:8000/api/v1/customers
-echo 
+echo
 echo ******************Adding Accounts with 0 initial Amount****************************
-echo 
+echo
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"accountType":"Current","currentAccountBalance":"0","customer":"1"}' \
+  http://localhost:8000/api/v1/accounts
+echo
+echo ******************Adding Accounts with 20 initial Amount****************************
+echo
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"accountType":"Current","currentAccountBalance":"20","customer":"1"}' \
   http://localhost:8000/api/v1/accounts
-echo 
+echo
 
 echo ******************Getting Accounts with Transactions****************************
-echo 
+echo
 curl --header "Content-Type: application/json" \
   --request GET \
   --data '{"accountType":"Current","currentAccountBalance":"20","customer":"1"}' \
   http://localhost:8000/api/v1/transaction/account/2
-echo 
+echo
